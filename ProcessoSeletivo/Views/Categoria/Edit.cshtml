@@ -1,0 +1,66 @@
+﻿@model ProcessoSeletivo.Models.Categoria
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Categoria</legend>
+
+      <div class="editor-label">
+            @Html.LabelFor(model => model.Idcategoria)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Idcategoria)
+            @Html.ValidationMessageFor(model => model.Idcategoria)
+        </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Descricaocategoria)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Descricaocategoria)
+        @Html.ValidationMessageFor(model => model.Descricaocategoria)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Idcategoriapai)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Idcategoriapai)
+        @Html.ValidationMessageFor(model => model.Idcategoriapai)
+    </div>
+@*
+    <div class="editor-label">
+        @Html.LabelFor(model => model.DeptName)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.DeptName)
+        @Html.ValidationMessageFor(model => model.DeptName)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Designation)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Designation)
+        @Html.ValidationMessageFor(model => model.Designation)
+    </div>*@
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Catálogo Categoria", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

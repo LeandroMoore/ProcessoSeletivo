@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProcessoSeletivo.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tela de Categoria</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Nova Categoria", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Idcategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricaocategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Idcategoriapai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idcategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricaocategoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Idcategoriapai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Idcategoria }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.Idcategoria }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.Idcategoria })
+            </td>
+        </tr>
+    }
+
+    </table>

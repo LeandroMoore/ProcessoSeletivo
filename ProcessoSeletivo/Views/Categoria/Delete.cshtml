@@ -1,0 +1,41 @@
+﻿@model ProcessoSeletivo.Models.Categoria
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Você tem certeza que deseja deletar este registro?</h3>
+
+<fieldset>
+    <legend>Categoria</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Idcategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Idcategoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricaocategoria)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricaocategoria)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Idcategoriapai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Idcategoriapai)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Catálogo Categoria", "Index")
+    </p>
+}
