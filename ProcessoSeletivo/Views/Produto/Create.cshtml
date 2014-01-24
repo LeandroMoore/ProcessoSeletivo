@@ -1,0 +1,51 @@
+﻿@model ProcessoSeletivo.Models.Produto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Cadastro Produto</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Produto</legend>
+
+        <div class="editor-label" hidden>
+            @Html.LabelFor(model => model.idProduto)
+        </div>
+        <div class="editor-field" hidden>
+            @Html.EditorFor(model => model.idProduto)
+            @Html.ValidationMessageFor(model => model.idProduto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescricaoProduto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescricaoProduto)
+            @Html.ValidationMessageFor(model => model.DescricaoProduto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Preco)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Preco)
+            @Html.ValidationMessageFor(model => model.Preco)
+        </div>
+
+        <p>
+            <input type="submit" value="Criar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Catálogo Produto", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

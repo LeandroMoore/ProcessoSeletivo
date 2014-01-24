@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProcessoSeletivo.Models.Produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tela de Produto</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Novo Produto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.idProduto }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.Idcategoria }) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.idProduto })
+            </td>
+        </tr>
+    }
+
+    </table>
