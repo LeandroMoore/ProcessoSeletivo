@@ -6,19 +6,17 @@
 
 <h2>Tela de Categoria</h2>
 
-<p>
-    @Html.ActionLink("Cadastrar Nova Categoria", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Idcategoria)
+            @Html.DisplayNameFor(model => model.idCategoria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Descricaocategoria)
+            @Html.DisplayNameFor(model => model.DescricaoCategoria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Idcategoriapai)
+            @Html.DisplayNameFor(model => model.idCategoriaPai)
         </th>
         <th></th>
     </tr>
@@ -26,20 +24,25 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Idcategoria)
+            @Html.DisplayFor(modelItem => item.idCategoria)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Descricaocategoria)
+            @Html.DisplayFor(modelItem => item.DescricaoCategoria)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Idcategoriapai)
+            @Html.DisplayFor(modelItem => item.idCategoriaPai)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Idcategoria }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.idCategoria }) |
             @*@Html.ActionLink("Details", "Details", new { id = item.Idcategoria }) |*@
-            @Html.ActionLink("Delete", "Delete", new { id = item.Idcategoria })
+            @Html.ActionLink("Delete", "Delete", new { id = item.idCategoria })
             </td>
         </tr>
     }
 
     </table>
+
+<p>
+    @Html.ActionLink("Cadastrar Nova Categoria", "Create")
+</p>
+<p><a href="/Categoria/Create" class="btn btn-primary btn-large">Cadastrar Nova Categoria</a></p>

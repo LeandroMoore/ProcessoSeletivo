@@ -11,6 +11,14 @@ namespace ProcessoSeletivo.Controllers
     {
         ProdutoDAL objDs;
 
+        //public void PreencherBags()
+        //{
+        //    CategoriaDAL objDsCategoria;
+        //    objDsCategoria = new CategoriaDAL();
+        //    IList<Categoria> categoriaList = objDsCategoria.GetCategorias();
+        //    ViewBag.Categorias = categoriaList;
+        //}
+
         public ProdutoController()
         {
             objDs = new ProdutoDAL(); 
@@ -37,8 +45,10 @@ namespace ProcessoSeletivo.Controllers
 
         public ActionResult Create()
         {
-            var Prod = new Produto();
-            return View(Prod);
+            //this.PreencherBags();
+            ViewData["categorias"] = new CategoriaDAL().GetCategorias();
+            //var Prod = new Produto();
+            return View("Create");
         }
 
         //
@@ -49,6 +59,7 @@ namespace ProcessoSeletivo.Controllers
         {
             try
             {
+                
                 objDs.CreateProduto(Prod);
                 return RedirectToAction("Index");
             }

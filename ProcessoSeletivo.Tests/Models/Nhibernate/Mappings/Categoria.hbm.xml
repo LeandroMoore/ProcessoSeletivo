@@ -12,14 +12,9 @@
       <column name="idCategoriaPai" sql-type="long" not-null="false" />
     </property>
 
-    <!--<bag name="ProdutoCategoria" generic="true" inverse="true" cascade="all" lazy="true">
+    <bag name="ProdutoCategoria" inverse="true">
       <key column="idCategoria" />
       <one-to-many class="ProdutoCategoria" />
-    </bag>-->
-
-    <bag name="Produtos" cascade="all-delete-orphan" lazy="true" inverse="true" table="Produto">
-      <key column="idProduto" />
-      <many-to-many class="Categoria" column="idCategoria"/>
     </bag>
     
   </class>

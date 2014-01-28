@@ -9,33 +9,27 @@
 <h3>Você tem certeza que deseja excluir este registro?</h3>
 
 <fieldset>
-    <legend>Categoria</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Idcategoria)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Idcategoria)
+
+    <div class="display-field" hidden>
+        @Html.DisplayFor(model => model.idCategoria)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Descricaocategoria)
+         @Html.DisplayNameFor(model => model.DescricaoCategoria)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Descricaocategoria)
+        @Html.DisplayFor(model => model.DescricaoCategoria)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Idcategoriapai)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Idcategoriapai)
+    <div class="display-field" hidden>
+        @Html.DisplayFor(model => model.idCategoriaPai)
     </div>
 
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
         <input type="submit" value="Excluir" /> |
-        @Html.ActionLink("Catálogo Categoria", "Index")
+        @Html.ActionLink("Voltar", "Index")
     </p>
 }

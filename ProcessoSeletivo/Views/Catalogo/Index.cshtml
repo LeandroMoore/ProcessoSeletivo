@@ -1,0 +1,54 @@
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/Produto/Catalogo.js")
+}
+
+@model ProcessoSeletivo.Models.Produto
+
+@using (Html.BeginForm("Listar", "Catalogo", FormMethod.Post, new { id = "formCatalogo", name = "formCatalogo" }))
+{
+    
+    <h2>Catalogo</h2>
+    
+     <br />  
+        <h1>@ViewBag.Mensagem</h1>
+     <br />  
+
+        <div class="editor-field">
+            @Html.LabelFor(model => model.Categorias, "Categoria")
+            @Html.DropDownListFor(model => model.Categorias, new SelectList(categorias, "idCategoria", "DescricaoCategoria"), new { id = "idCategoria",
+                                                                                                                            @onchange = "this.form.submit();" })
+        </div>
+    
+    @*<div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            @Html.LabelFor(model => model.idCategoria "")
+            @Html.DropDownListFor(model => model.idCategoriaPai, new SelectList(ViewBag.Categorias, "Codigo", "Descricao"), new { id="CodigoCategoria", 
+                                                                                                                        @onchange = "this.form.submit();" })
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            @Html.LabelFor(model => model.idCategoriaPai, "Categorias Filhas")
+            @Html.DropDownListFor(model => model.idCategoriaPai, new SelectList(ViewBag.CategoriasFilhas, "Codigo", "Descricao"), new { id="idCategoriaPai", 
+                                                                                                                                    @onchange = "this.form.submit();" })
+        </div>
+    </div>
+    
+    <br />  
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+            @Html.LabelFor(model => model.Produtos, "Produtos")
+            @Html.ListBoxFor(model => model.Produtos, new SelectList(ViewBag.Produtos, "Codigo", "Descricao"), new { id="CodigoProduto" })
+        </div>
+    </div>*@
+    
+   
+
+     
+}    
+
+
+

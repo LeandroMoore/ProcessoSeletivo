@@ -8,13 +8,11 @@ namespace ProcessoSeletivo.Models
 
     public class Categoria {
         public Categoria() {
-            Produtos = new List<Produto>();
+            ProdutoCategoria = new List<ProdutoCategoria>();
         }
         public virtual long idCategoria { get; set; }
         public virtual string DescricaoCategoria { get; set; }
         public virtual long? idCategoriaPai { get; set; }
-        ///public virtual IList<ProdutoCategoria> ProdutoCategoria { get; set; }
-        ///
-        public virtual IList<Produto> Produtos { get; set; }
+        public virtual IList<ProdutoCategoria> ProdutoCategoria { get; set; }
     }
 }

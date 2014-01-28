@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Create";
+    var categorias = (IList<ProcessoSeletivo.Models.Categoria>)ViewData["categorias"];
+    
 }
 
 <h2>Cadastro Produto</h2>
@@ -10,7 +12,6 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Produto</legend>
 
         <div class="editor-label" hidden>
             @Html.LabelFor(model => model.idProduto)
@@ -35,7 +36,20 @@
             @Html.EditorFor(model => model.Preco)
             @Html.ValidationMessageFor(model => model.Preco)
         </div>
+        
 
+
+    @*for (var i = 0; i < categorias.Count; i++)
+    {
+        <input type="checkbox" value="@categorias[i].idCategoria" id="categoria-@categorias[i].idCategoria"  name="categoria-@categorias[i].idCategoria" />
+                <label for="categoria-@categorias[i].idCategoria">@categorias[i].DescricaoCategoria</label>
+            }
+        }*@
+        
+        <div class="editor-field">
+            @Html.LabelFor(model => model.Categorias, "Categoria")
+            @Html.ListBoxFor(model => model.Categorias, new SelectList(categorias, "idCategoria", "DescricaoCategoria"), new { id = "idCategoria" })
+        </div>
         <p>
             <input type="submit" value="Criar" />
         </p>
@@ -43,7 +57,7 @@
 }
 
 <div>
-    @Html.ActionLink("Catálogo Produto", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>
 
 @section Scripts {

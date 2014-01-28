@@ -11,17 +11,10 @@
       <column name="Preco" sql-type="decimal" not-null="false" />
     </property>
     
-    <!--<bag name="ProdutoCategoria"  generic="true" inverse="true" cascade="all" lazy="true">
+    <bag name="ProdutoCategoria" inverse="true">
       <key column="idProduto" />
       <one-to-many class="ProdutoCategoria" />
-    </bag>-->
-
-    <bag name="Categorias" cascade="none" table="Categoria" lazy="true">
-      <key column="idCategoria" />
-      <many-to-many class="Produto" column="idProduto" />
     </bag>
-    
-    
     
   </class>
 </hibernate-mapping>

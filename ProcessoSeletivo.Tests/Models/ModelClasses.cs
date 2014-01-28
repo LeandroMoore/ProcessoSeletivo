@@ -5,8 +5,6 @@ using System.Web;
 using NHibernate;
 using NHibernate.Cfg;
 using ProcessoSeletivo.Models;
-using System.Reflection;
-using System.IO;
 
 namespace ProcessoSeletivo.Models
 {
@@ -21,7 +19,6 @@ namespace ProcessoSeletivo.Models
                 var cgf = new Configuration();
                 //var data = cgf.Configure(HttpContext.Current.Server.MapPath(@"Models\Nhibernate\Configuration\hibernate.cfg.xml"));
                 var data = cgf.Configure(System.Web.Hosting.HostingEnvironment.MapPath(@"\Models\Nhibernate\Configuration\hibernate.cfg.xml"));
-                //var data = cgf.Configure(Path.GetDirectoryName(Assembly.GetAssembly(typeof(ProcessoSeletivo.Models.SessionFactory)).Location) + @"\Models\Configuration\hibernate.cfg.xml");
                 //cgf.AddDirectory(new System.IO.DirectoryInfo(HttpContext.Current.Server.MapPath(@"Models\Nhibernate\Mappings")));
                 cgf.AddDirectory(new System.IO.DirectoryInfo(System.Web.Hosting.HostingEnvironment.MapPath(@"\Models\Nhibernate\Mappings")));
                 SessionFactory.sessionFactory = data.BuildSessionFactory();

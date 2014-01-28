@@ -9,7 +9,6 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Produto</legend>
 
       <div class="editor-label" hidden>
             @Html.LabelFor(model => model.idProduto)
@@ -41,7 +40,7 @@
 }
 
 <div>
-    @Html.ActionLink("Catálogo Produto", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>
 
 @section Scripts {

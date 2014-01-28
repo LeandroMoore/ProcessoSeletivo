@@ -9,12 +9,8 @@
 <h3>Você tem certeza que deseja excluir este registro?</h3>
 
 <fieldset>
-    <legend>Produto</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.idProduto)
-    </div>
-    <div class="display-field">
+    <div class="display-field" hidden>
         @Html.DisplayFor(model => model.idProduto)
     </div>
 
@@ -25,10 +21,7 @@
         @Html.DisplayFor(model => model.DescricaoProduto)
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Preco)
-    </div>
-    <div class="display-field">
+    <div class="display-field" hidden>
         @Html.DisplayFor(model => model.Preco)
     </div>
 
@@ -36,6 +29,6 @@
 @using (Html.BeginForm()) {
     <p>
         <input type="submit" value="Excluir" /> |
-        @Html.ActionLink("Catálogo Produto", "Index")
+        @Html.ActionLink("Voltar", "Index")
     </p>
 }

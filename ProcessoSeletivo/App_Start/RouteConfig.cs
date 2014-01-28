@@ -26,6 +26,12 @@ namespace ProcessoSeletivo
             );
 
             routes.MapRoute(
+                name: "Catalogo",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Catalogo", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

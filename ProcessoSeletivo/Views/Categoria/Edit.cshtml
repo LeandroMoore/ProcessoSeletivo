@@ -9,30 +9,29 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Categoria</legend>
 
       <div class="editor-label" hidden>
-            @Html.LabelFor(model => model.Idcategoria)
+            @Html.LabelFor(model => model.idCategoria)
         </div>
         <div class="editor-field" hidden>
-            @Html.EditorFor(model => model.Idcategoria)
-            @Html.ValidationMessageFor(model => model.Idcategoria)
+            @Html.EditorFor(model => model.idCategoria)
+            @Html.ValidationMessageFor(model => model.idCategoria)
         </div>
 
     <div class="editor-label">
-        @Html.LabelFor(model => model.Descricaocategoria)
+        @Html.LabelFor(model => model.DescricaoCategoria)
     </div>
     <div class="editor-field">
-        @Html.EditorFor(model => model.Descricaocategoria)
-        @Html.ValidationMessageFor(model => model.Descricaocategoria)
+        @Html.EditorFor(model => model.DescricaoCategoria)
+        @Html.ValidationMessageFor(model => model.DescricaoCategoria)
     </div>
 
     <div class="editor-label">
-        @Html.LabelFor(model => model.Idcategoriapai)
+        @Html.LabelFor(model => model.idCategoriaPai)
     </div>
     <div class="editor-field">
-        @Html.EditorFor(model => model.Idcategoriapai)
-        @Html.ValidationMessageFor(model => model.Idcategoriapai)
+        @Html.EditorFor(model => model.idCategoriaPai)
+        @Html.ValidationMessageFor(model => model.idCategoriaPai)
     </div>
         <p>
             <input type="submit" value="Save" />
@@ -41,7 +40,7 @@
 }
 
 <div>
-    @Html.ActionLink("Catálogo Categoria", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>
 
 @section Scripts {
