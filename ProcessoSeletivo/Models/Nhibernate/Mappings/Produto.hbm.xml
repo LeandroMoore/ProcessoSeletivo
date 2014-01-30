@@ -16,9 +16,9 @@
       <one-to-many class="ProdutoCategoria" />
     </bag>-->
 
-    <bag name="Categorias" cascade="none" table="Categoria" lazy="true">
-      <key column="idCategoria" />
-      <many-to-many class="Produto" column="idProduto" />
+    <bag name="Categorias" cascade="none" table="ProdutoCategoria" lazy="true">
+      <key column="idProduto" />
+      <many-to-many class="Categoria" column="idCategoria" not-found="ignore"/>
     </bag>
     
     

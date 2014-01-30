@@ -1,18 +1,16 @@
-
-@section Scripts {
-    @Scripts.Render("~/Scripts/Produto/Catalogo.js")
-}
-
 @model ProcessoSeletivo.Models.Produto
 
-@using (Html.BeginForm("Listar", "Catalogo", FormMethod.Post, new { id = "formCatalogo", name = "formCatalogo" }))
+@{
+    ViewBag.Title = "Create";
+    var categorias = (IList<ProcessoSeletivo.Models.Categoria>)ViewData["categorias"];
+
+}
+
+<h2>Cadastro Produto</h2>
+
+@using (Html.BeginForm())
 {
-    
-    <h2>Catalogo</h2>
-    
-     <br />  
-        <h1>@ViewBag.Mensagem</h1>
-     <br />  
+    @Html.ValidationSummary(true)
 
         <div class="editor-field">
             @Html.LabelFor(model => model.Categorias, "Categoria")
